@@ -14,6 +14,7 @@
 		1D34BEEB1CD14CC60043CA4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D34BEE91CD14CC60043CA4B /* LaunchScreen.storyboard */; };
 		1D34BEF61CD14CC60043CA4B /* myLittleMonsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D34BEF51CD14CC60043CA4B /* myLittleMonsterTests.swift */; };
 		1D34BF011CD14CC60043CA4B /* myLittleMonsterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D34BF001CD14CC60043CA4B /* myLittleMonsterUITests.swift */; };
+		1D4C9F411CD6A8A400FF3C72 /* DragImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4C9F401CD6A8A400FF3C72 /* DragImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1D34BEFC1CD14CC60043CA4B /* myLittleMonsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myLittleMonsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D34BF001CD14CC60043CA4B /* myLittleMonsterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myLittleMonsterUITests.swift; sourceTree = "<group>"; };
 		1D34BF021CD14CC60043CA4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D4C9F401CD6A8A400FF3C72 /* DragImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		1D34BEDF1CD14CC60043CA4B /* myLittleMonster */ = {
 			isa = PBXGroup;
 			children = (
+				1D4C9F401CD6A8A400FF3C72 /* DragImage.swift */,
 				1D34BEE01CD14CC60043CA4B /* AppDelegate.swift */,
 				1D34BEE21CD14CC60043CA4B /* ViewController.swift */,
 				1D34BEE41CD14CC60043CA4B /* Main.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D34BEE31CD14CC60043CA4B /* ViewController.swift in Sources */,
+				1D4C9F411CD6A8A400FF3C72 /* DragImage.swift in Sources */,
 				1D34BEE11CD14CC60043CA4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +488,7 @@
 				1D34BF071CD14CC60043CA4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D34BF081CD14CC60043CA4B /* Build configuration list for PBXNativeTarget "myLittleMonsterTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				1D34BF0A1CD14CC60043CA4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D34BF0B1CD14CC60043CA4B /* Build configuration list for PBXNativeTarget "myLittleMonsterUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				1D34BF0D1CD14CC60043CA4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
