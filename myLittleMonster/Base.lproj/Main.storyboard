@@ -60,7 +60,7 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="idle 1" translatesAutoresizingMaskIntoConstraints="NO" id="Kk6-8l-tks">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="idle 1" translatesAutoresizingMaskIntoConstraints="NO" id="Kk6-8l-tks" customClass="MonsterImg" customModule="myLittleMonster" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="170" width="498" height="430"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="430" id="T5d-4e-aTc"/>
@@ -119,12 +119,12 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="V1t-eu-bp1"/>
                                 <exclude reference="AVS-Wd-42a"/>
                                 <exclude reference="N3p-ng-Vlc"/>
                                 <exclude reference="WmP-Oc-tIf"/>
                                 <exclude reference="YSr-2r-2qC"/>
                                 <exclude reference="f7X-8r-5eB"/>
-                                <exclude reference="V1t-eu-bp1"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -146,6 +146,9 @@
                         <outlet property="food" destination="OKd-Rd-jPT" id="ma1-0X-dtA"/>
                         <outlet property="heart" destination="4wZ-D8-sYe" id="cab-zI-Rfa"/>
                         <outlet property="monsterImg" destination="Kk6-8l-tks" id="azt-FJ-XV1"/>
+                        <outlet property="penalty1Img" destination="T7w-1I-zkr" id="0Io-8j-7OJ"/>
+                        <outlet property="penalty2Img" destination="XVh-Fh-lD8" id="pI0-OU-RtM"/>
+                        <outlet property="penaly3Img" destination="7LF-CB-Rgu" id="bzc-Se-aZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
