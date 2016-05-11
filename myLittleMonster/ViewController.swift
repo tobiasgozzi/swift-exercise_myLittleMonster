@@ -12,14 +12,30 @@ import AVFoundation
 class ViewController: UIViewController {
     
     
+    @IBOutlet weak var bgBrown: UIImageView!
+    @IBOutlet weak var groundBrown: UIImageView!
+    @IBOutlet weak var bgBlue: UIImageView!
+    @IBOutlet weak var groundBlue: UIImageView!
+    
+    
     @IBOutlet weak var monsterImg: MonsterImg!
+    @IBOutlet weak var monsterSnail: MonsterImg!
+    
     @IBOutlet weak var heart: DragImg!
     @IBOutlet weak var food: DragImg!
+    @IBOutlet weak var slash: DragImg!
+    
+    
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penaly3Img: UIImageView!
     @IBOutlet weak var replayBtn: UIButton!
     @IBOutlet weak var replayBg: UIView!
+    
+    @IBOutlet weak var chooseCharacterView: UIView!
+    @IBOutlet weak var chooseCharacterLbl: UILabel!
+    @IBOutlet weak var monsterSnailSelectBtn: UIButton!
+    @IBOutlet weak var monterStoneSelectBtn: UIButton!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPACE: CGFloat = 1.0
@@ -64,6 +80,22 @@ class ViewController: UIViewController {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.itemDroppedOnCharacter(_:)), name: "onTargetDropped", object: nil)
         
+    }
+    
+    
+    @IBAction func choosingCharacter(sender: UIButton) {
+        if sender.tag == 0 {
+            groundBrown.hidden = true
+            bgBrown.hidden = true
+            monsterImg.image = UIImage(named: "blue_idle (1).png")
+            monsterImg.monsterType = "snail"
+        } else {
+            groundBlue.hidden = true
+            bgBlue.hidden = true
+            monsterImg.image = UIImage(named: "idle 1.png")
+            monsterImg.monsterType = "rock"
+        }
+        chooseCharacterView.hidden = true
         startGame()
     }
     
@@ -75,6 +107,9 @@ class ViewController: UIViewController {
         food.userInteractionEnabled = false
         heart.alpha = DIM_ALPHA
         heart.userInteractionEnabled = false
+        slash.alpha = DIM_ALPHA
+        slash.userInteractionEnabled = false
+        
         
         if currentItem == 0 {
             sfxHeart.play()
@@ -120,20 +155,32 @@ class ViewController: UIViewController {
 
         }
         
-        let rand = arc4random_uniform(2)
+        let rand = arc4random_uniform(3)
         
         if rand == 0 {
             food.alpha = DIM_ALPHA
             food.userInteractionEnabled = false
+            slash.alpha = DIM_ALPHA
+            slash.userInteractionEnabled = false
             
             heart.alpha = OPACE
             heart.userInteractionEnabled = true
-        } else {
+        } else if rand == 1 {
             heart.alpha = DIM_ALPHA
             heart.userInteractionEnabled = false
+            slash.alpha = DIM_ALPHA
+            slash.userInteractionEnabled = false
             
             food.alpha = OPACE
             food.userInteractionEnabled = true
+        } else {
+            heart.alpha = DIM_ALPHA
+            heart.userInteractionEnabled = false
+            food.alpha = DIM_ALPHA
+            food.userInteractionEnabled = false
+            
+            slash.alpha = OPACE
+            slash.userInteractionEnabled = true
         }
         
         currentItem = rand
@@ -145,11 +192,12 @@ class ViewController: UIViewController {
     @IBAction func startGame() {
         food.dropTarget = monsterImg
         heart.dropTarget = monsterImg
+        slash.dropTarget = monsterImg
         
         penalty1Img.alpha = DIM_ALPHA
         penalty2Img.alpha = DIM_ALPHA
         penaly3Img.alpha = DIM_ALPHA
-        monsterImg.startingAnimation(isDeadAnimation: false)
+        monsterImg.startingAnimation(isDeadAnimation: false, monsterType: monsterImg.monsterType)
         
         penalties = 0
         replayBg.hidden = true
@@ -163,11 +211,12 @@ class ViewController: UIViewController {
     func gameOver() {
         timer.invalidate()
         sfxDeath.play()
-        monsterImg.startingAnimation(isDeadAnimation: true)
+        monsterImg.startingAnimation(isDeadAnimation: true, monsterType: monsterImg.monsterType)
         musicPlayer.stop()
         
         heart.alpha = DIM_ALPHA
         food.alpha = DIM_ALPHA
+        slash.alpha = DIM_ALPHA
         
         replayBg.hidden = false
         replayBtn.hidden = false
